@@ -17,7 +17,4 @@ Route::get('/', function () {
 
 Route::get('/about', 'HomeController@index');
 
-Route::get('/about/{task}', function ($id) {
-	$tasks=DB::table('user_tasks')->find($id);
-    return view('tasks.show',compact('tasks'));
-});
+Route::get('/about/{id}','HomeController@displayTask');

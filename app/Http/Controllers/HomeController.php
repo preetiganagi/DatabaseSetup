@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\UserTask;
 
 class HomeController extends Controller
 {
     public function index()
     {
-    	$todos = DB::table('user_tasks')->get();
+    	$todos =UserTask::all();
 
     	return view('about',compact('todos'),['name' => 'preeti']);
     }
+
+    function displayTask($id) 
+    {
+		$tasks=UserTask::find($id);
+	    return view('tasks.show',compact('tasks'));
+	}
 }

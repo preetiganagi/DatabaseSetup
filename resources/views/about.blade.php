@@ -8,7 +8,7 @@
 <h4>
 	<ul>
 		@foreach($todos as $todo)
-		<li> {{$todo->body}}</li>
+		<li> <a href="/about/{{$todo->id}}">{{$todo->body}}</a></li>
 		@endforeach
 	</ul>
 </h4>	
